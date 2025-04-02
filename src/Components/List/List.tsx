@@ -4,7 +4,7 @@ import { ListElement } from "../../types";
 
 type ListProps = {
   title: string;
-  list: ListElement[]; // Un array de objetos tipo `Element`
+  list: ListElement[];
 };
 
 const List = (props: ListProps) => {

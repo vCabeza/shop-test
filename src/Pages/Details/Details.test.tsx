@@ -35,31 +35,6 @@ describe("Details", () => {
     expect(detailsTitle).toBeVisible();
   });
 
-  /*it("shows an error when call fails", async () => {
-    jest
-      .spyOn(global, "fetch")
-      // @ts-ignore: Unreachable code error
-      .mockResolvedValue({
-        ok: false,
-        status: 500,
-        json: () => Promise.resolve({ message: "Server Error" }),
-      });
-
-    await act(async () =>
-      render(
-        <MemoryRouter>
-          <Details addItem={addItem} />
-        </MemoryRouter>
-      )
-    );
-
-    await waitFor(() => {
-      expect(console.error).toHaveBeenCalledWith(
-        "Error al obtener los teléfonos"
-      );
-    });
-  });*/
-
   it("changes storage when different storage is clicked", async () => {
     await act(async () =>
       render(
