@@ -1,0 +1,27 @@
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.carousel-title {
+  display: flex;
+  align-items: start;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.carousel-list {
+  display: -webkit-inline-box;
+  overflow: scroll;
+  overflow-y: hidden;
+  width: 1200px;
+  white-space: nowrap;
+}
+
+.carousel-element {
+  width: 344px;
+  height: 344px;
+  padding: 16px;
+  gap: 24px;
+}

@@ -1,0 +1,62 @@
+body,
+#root,
+.App {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  gap: 48px;
+}
+
+* {
+  scrollbar-color: #000000 #cccccc;
+  scrollbar-width: thin;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 100px 24px 100px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.cart {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 4px;
+  gap: 6px;
+  border-radius: 5px;
+}
+
+.cart:hover {
+  background: #dbd9d7a8;
+}
+
+@media only screen and (max-width: 450px) {
+  .header {
+    padding: 24px 16px;
+  }
+}
+@media only screen and (min-width: 450px) {
+  .header {
+    padding: 24px 40px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .header {
+    padding: 24px 100px;
+  }
+}

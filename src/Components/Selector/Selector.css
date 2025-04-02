@@ -1,0 +1,18 @@
+.selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+}
+
+.selector-options {
+  display: flex;
+}
+
+.selector-gap {
+  gap: 16px;
+}
+
+.selector-label {
+  text-transform: uppercase;
+}

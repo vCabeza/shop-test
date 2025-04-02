@@ -1,0 +1,57 @@
+.cart-card-container {
+  display: flex;
+  gap: 40px;
+  border-width: 0.5px;
+  padding: 16px;
+  width: 100%;
+}
+
+.cart-card-image {
+  align-self: center;
+  height: auto;
+  object-fit: contain;
+}
+
+.cart-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 246px;
+  gap: 8px;
+  padding: 40px 0;
+}
+
+.cart-card-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+
+.cart-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-card-name {
+  text-transform: uppercase;
+}
+
+.cart-card-delete {
+  display: flex;
+  justify-content: left;
+  cursor: pointer;
+  color: #df0000;
+}
+
+@media only screen and (max-width: 450px) {
+  .cart-card-image {
+    width: 160px;
+  }
+}
+@media only screen and (min-width: 450px) {
+  .cart-card-image {
+    width: 262px;
+  }
+}
