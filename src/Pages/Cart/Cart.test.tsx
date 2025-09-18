@@ -78,17 +78,35 @@ describe("Cart", () => {
   it("renders", () => {
     render(
       <MemoryRouter>
-        <Cart cartItems={phonesList} deleteItem={deleteItem} />
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
       </MemoryRouter>
     );
     const cartText = screen.getByText(/cart/i);
     expect(cartText).toBeVisible();
   });
 
+  it("it shows empty card when no element is added", () => {
+    render(
+      <MemoryRouter>
+        <Cart cartItems={[]} deleteItem={deleteItem} priceStrategy="default" />
+      </MemoryRouter>
+    );
+    const cartText = screen.getByText(/Your cart is empty/i);
+    expect(cartText).toBeVisible();
+  });
+
   it("renders cart items", () => {
     render(
       <MemoryRouter>
-        <Cart cartItems={phonesList} deleteItem={deleteItem} />
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
       </MemoryRouter>
     );
 
@@ -102,10 +120,59 @@ describe("Cart", () => {
     expect(phoneThree[0]).toBeVisible();
   });
 
+  it("calculates default total price correctly", async () => {
+    render(
+      <MemoryRouter>
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
+      </MemoryRouter>
+    );
+
+    const totalPrice = screen.getAllByText(/1300 EUR/i);
+    expect(totalPrice[0]).toBeVisible();
+  });
+
+  it("calculates withDiscount total price correctly", async () => {
+    render(
+      <MemoryRouter>
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="withDiscount"
+        />
+      </MemoryRouter>
+    );
+
+    const totalPrice = screen.getAllByText(/1170 EUR/i);
+    expect(totalPrice[0]).toBeVisible();
+  });
+
+  it("calculates withTax total price correctly", async () => {
+    render(
+      <MemoryRouter>
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="withTax"
+        />
+      </MemoryRouter>
+    );
+
+    const totalPrice = screen.getAllByText(/1573 EUR/i);
+    expect(totalPrice[0]).toBeVisible();
+  });
+
   it("calls deleteItem function when button is clicked", () => {
     render(
       <MemoryRouter>
-        <Cart cartItems={phonesList} deleteItem={deleteItem} />
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
       </MemoryRouter>
     );
 
@@ -131,7 +198,11 @@ describe("Cart", () => {
   it("redirects user to home if continue shopping button is clicked desktop", async () => {
     render(
       <MemoryRouter>
-        <Cart cartItems={phonesList} deleteItem={deleteItem} />
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
       </MemoryRouter>
     );
 
@@ -147,7 +218,11 @@ describe("Cart", () => {
   it("redirects user to home if continue shopping button is clicked mobile", async () => {
     render(
       <MemoryRouter>
-        <Cart cartItems={phonesList} deleteItem={deleteItem} />
+        <Cart
+          cartItems={phonesList}
+          deleteItem={deleteItem}
+          priceStrategy="default"
+        />
       </MemoryRouter>
     );
 

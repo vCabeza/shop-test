@@ -65,6 +65,7 @@ function App() {
             <Cart
               cartItems={cartItems}
               deleteItem={(item: SelectedPhone) => deleteItem(item)}
+              priceStrategy="default"
             />
           }
         />
